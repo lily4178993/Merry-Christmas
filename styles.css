@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Reenie Beanie', cursive;
+}
+
+body {
+  overflow: hidden;
+  background-color: #f6f6f6;
+  font-size: 20px;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container i {
+  position: absolute;
+  border-radius: 100%;
+  background: #ff2a2a;
+  animation: bubblesAnimation linear infinite;
+}
+
+.container i:nth-child(even) {
+  border: 1px solid #ff2a2a;
+  background: transparent;
+}
+
+.container .box {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+}
+
+.container .box::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000, transparent);
+  opacity: 0.1;
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+
+.container .box .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #e3e4e8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.container .box .circle::before {
+  position: absolute;
+  content: '';
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  background: linear-gradient(315deg, #fff, #e8e3e3);
+  border-radius: 50%;
+}
+
+.container .box .circle h1 {
+  position: absolute;
+  font-size: 4rem;
+  text-align: center;
+  color: #ff2a2a;
+  z-index: 2;
+}
+
+@keyframes bubblesAnimation {
+  0% {
+    transform: translateY(-2000%);
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
